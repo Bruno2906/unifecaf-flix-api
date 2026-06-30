@@ -1,24 +1,24 @@
-#  UniFECAF Flix API
+# UniFECAF Flix API
 
 API REST desenvolvida em Node.js para gerenciamento e consulta de filmes da plataforma fictícia **UniFECAF Flix**.
 
 O projeto foi desenvolvido como atividade acadêmica da disciplina de **Web Programming for Back End**, utilizando arquitetura **MVC (Model-View-Controller)**, banco de dados **MySQL** e padrão **REST**.
 
----
+## Preview
 
-##  Tecnologias Utilizadas
+<img width="2559" height="1439" alt="Preview da API no Postman" src="https://github.com/user-attachments/assets/cf6fa842-8340-42aa-8d91-9680703d832d" />
 
-* Node.js
-* Express.js
-* MySQL
-* MySQL2
-* CORS
-* Git e GitHub
-* Postman
+## Tecnologias Utilizadas
 
----
+- Node.js
+- Express.js
+- MySQL
+- MySQL2
+- CORS
+- Git e GitHub
+- Postman
 
-##  Estrutura do Projeto
+## Estrutura do Projeto
 
 ```text
 unifecaf-flix-api/
@@ -42,9 +42,7 @@ unifecaf-flix-api/
 └── .gitignore
 ```
 
----
-
-##  Banco de Dados
+## Banco de Dados
 
 O projeto utiliza MySQL para armazenamento dos dados dos filmes.
 
@@ -60,9 +58,15 @@ CREATE TABLE tbl_filmes (
 );
 ```
 
----
+## Endpoints
 
-##  Endpoints
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/v1/controle-filmes/filme` | Lista todos os filmes |
+| GET | `/v1/controle-filmes/filme/:id` | Busca um filme por ID |
+| GET | `/v1/controle-filmes/filtro/filme?nome=Batman` | Filtra filmes por nome ou sinopse |
+
+## Exemplos de Requisição
 
 ### Listar todos os filmes
 
@@ -73,24 +77,16 @@ GET /v1/controle-filmes/filme
 ### Buscar filme por ID
 
 ```http
-GET /v1/controle-filmes/filme/:id
-```
-
-Exemplo:
-
-```http
 GET /v1/controle-filmes/filme/1
 ```
 
-### Filtrar filmes por nome ou sinopse
+### Filtrar filmes por nome
 
 ```http
 GET /v1/controle-filmes/filtro/filme?nome=Batman
 ```
 
----
-
-##  Exemplo de Resposta
+## Exemplo de Resposta
 
 ```json
 {
@@ -107,9 +103,7 @@ GET /v1/controle-filmes/filtro/filme?nome=Batman
 }
 ```
 
----
-
-##  Como Executar o Projeto
+## Como Executar o Projeto
 
 ### Clonar o repositório
 
@@ -131,13 +125,13 @@ npm install
 
 ### Configurar conexão com MySQL
 
-Editar o arquivo:
+Edite o arquivo:
 
-```js
+```text
 src/database/connection.js
 ```
 
-Informando usuário, senha e banco de dados MySQL.
+Informe usuário, senha e banco de dados MySQL conforme sua configuração local.
 
 ### Executar a aplicação
 
@@ -151,36 +145,30 @@ Servidor disponível em:
 http://localhost:3000
 ```
 
----
-
-##  Testes
+## Testes
 
 Os endpoints foram testados utilizando o Postman, validando:
 
-* Listagem de filmes;
-* Busca por ID;
-* Filtro por nome;
-* Tratamento de erro (404);
-* Retorno de status HTTP adequados.
+- Listagem de filmes
+- Busca por ID
+- Filtro por nome
+- Tratamento de erro 404
+- Retorno de status HTTP adequados
 
----
+<img width="2559" height="1389" alt="Teste da API no Postman" src="https://github.com/user-attachments/assets/f5e83dda-771a-43b5-b785-7fbcd0fe6608" />
 
-##  Conceitos Aplicados
+## Conceitos Aplicados
 
-* API REST
-* Arquitetura MVC
-* Integração com Banco de Dados
-* Tratamento de Erros
-* Status HTTP
-* Modularização de Código
-* Versionamento com Git e GitHub
+- API REST
+- Arquitetura MVC
+- Integração com banco de dados
+- Tratamento de erros
+- Status HTTP
+- Modularização de código
+- Versionamento com Git e GitHub
 
----
-
-##  Autor
+## Autor
 
 **Bruno Martins Rosa**
 
 Estudante de Análise e Desenvolvimento de Sistemas (ADS)
-
-Projeto desenvolvido para fins acadêmicos.
